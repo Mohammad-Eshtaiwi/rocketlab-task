@@ -1,0 +1,14 @@
+.form {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: var(--item-padding);
+  background: var(--item-background);
+  backdrop-filter: blur(10px);
+  border-radius: 5px;
+  position: relative;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+}

@@ -1,0 +1,69 @@
+.button {
+  border: none;
+  border-radius: 12px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom right, #d066ff, #66e5ff);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 40px rgba(192, 88, 243, 0.3),
+      0 0 0 1px rgba(255, 255, 255, 0.1);
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  // Sizes
+  &--sm {
+    padding: 0.625rem 1.25rem;
+    font-size: 0.875rem;
+  }
+
+  &--md {
+    padding: 0.875rem 1.75rem;
+    font-size: 1rem;
+  }
+
+  &--lg {
+    padding: 1.125rem 2.25rem;
+    font-size: 1.125rem;
+  }
+
+  // Variants
+  &--primary {
+    background: linear-gradient(to bottom right, #c058f3, #55ddff);
+  }
+
+  &--secondary {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    
+    &::before {
+      background: rgba(255, 255, 255, 0.05);
+    }
+    
+    &:hover {
+      box-shadow: 0 10px 40px rgba(255, 255, 255, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.2);
+    }
+  }
+}

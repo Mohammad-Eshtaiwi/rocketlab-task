@@ -1,0 +1,54 @@
+.listContainer {
+  background-color: var(--item-background);
+  border-radius: 5px;
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  font-size: 1.125rem;
+  padding: var(--item-padding);
+}
+
+.listItem + .listItem {
+  border-top: 1px solid var(--divider-color);
+}
+
+.title {
+  font-size: 1.25rem;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.meta {
+  display: flex;
+  color: var(--meta-text-color);
+  font-size: 0.875rem;
+  @media (max-width: 540px) {
+    text-align: center;
+  }
+}
+
+.filters {
+  margin-inline: auto;
+  display: flex;
+  gap: 1em;
+  list-style: none;
+
+  li {
+    cursor: pointer;
+  }
+}
+
+.clear {
+  background-color: transparent;
+  border: none;
+  color: var(--meta-text-color);
+  cursor: pointer;
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
