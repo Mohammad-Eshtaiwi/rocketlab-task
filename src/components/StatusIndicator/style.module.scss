@@ -9,4 +9,13 @@
   color: #fff;
   width: fit-content;
   font-size: 0.875rem;
+  &[data-status="completed"] {
+    background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  }
+  &[data-status="active"] {
+    background: linear-gradient(to bottom right, #c058f3, #55ddff);
+  }
+  &[data-status="not-started"] {
+    background: linear-gradient(135deg, #3a8dde 0%, #6fd6ff 100%);
+  }
 }

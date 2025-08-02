@@ -13,7 +13,7 @@ export default function StatusIndicator(
     "not-started": <FaCircle />,
   };
   return (
-    <span className={styles.statusButton} {...props}>
+    <span data-status={props.status} className={styles.statusButton} {...props}>
       {icon[props.status]}
     </span>
   );

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Josefin_Sans } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layouts/Header";
+import QueryProvider from "@/lib/providers/QueryProvider";
 
 const josefinSans = Josefin_Sans({
   subsets: ["latin"],
@@ -9,8 +10,8 @@ const josefinSans = Josefin_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "My App",
-  description: "A minimal Next.js application",
+  title: "Task Manager",
+  description: "A task management app with IndexedDB and React Query",
 };
 
 export default function RootLayout({
@@ -21,10 +22,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${josefinSans.className} antialiased`}>
-        <div className="container">
-          <Header />
-          {children}
-        </div>
+        <QueryProvider>
+          <div className="container">
+            <Header />
+            {children}
+          </div>
+        </QueryProvider>
       </body>
     </html>
   );
