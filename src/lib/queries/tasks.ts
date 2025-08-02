@@ -14,15 +14,9 @@ export const TASK_KEYS = {
 
 // Queries
 export const useTasksQuery = (filter?: Status) => {
-  console.log(filter, "useTasksQuery");
-
-  console.log(TASK_KEYS.list(filter));
-
   return useQuery({
     queryKey: TASK_KEYS.list(filter),
     queryFn: async () => {
-      console.log("refetching tasks");
-
       if (!filter) {
         return db.tasks.orderBy("createdAt").reverse().toArray();
       }
